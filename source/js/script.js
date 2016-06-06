@@ -38,10 +38,9 @@
     e.stopPropagation();
 
     var $this = $(this),
-      title = $this.attr('data-title'),
+      encodedTitle = $this.attr('data-title-enc'),
+      encodedUrl = $this.attr('data-url-enc'),
       url = $this.attr('data-url'),
-      encodedTitle = encodeURIComponent(title),
-      encodedUrl = encodeURIComponent(url),
       id = 'article-share-box-' + $this.attr('data-id'),
       offset = $this.offset();
 
@@ -58,8 +57,8 @@
           '<input class="article-share-input" value="' + url + '">',
           '<div class="article-share-links">',
             '<a href="https://twitter.com/intent/tweet?text=' + encodedTitle + '&url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+            '<a href="http://b.hatena.ne.jp/my/add.confirm?url=' + encodedUrl + '" class="article-share-hatena" target="_blank" title="はてなブックマーク"></a>',
             '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
-            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
             '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
           '</div>',
         '</div>'

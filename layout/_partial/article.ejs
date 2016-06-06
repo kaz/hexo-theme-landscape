@@ -23,7 +23,20 @@
       <% } %>
     </div>
     <footer class="article-footer">
-      <a data-title="<%- post.title %> | <%- config.title %>" data-url="<%- post.permalink %>" data-id="<%= post._id %>" class="article-share-link"><%= __('share') %></a>
+      <%
+         var titleEnc = encodeURIComponent(post.title + " | " + config.title);
+         var urlEnc = encodeURIComponent(post.permalink);
+         if (index){
+      %>
+        <a data-title-enc="<%- titleEnc %>" data-url-enc="<%- urlEnc %>" data-url="<%- post.permalink %>" data-id="<%= post._id %>" class="article-share-link"><%= __('share') %></a>
+      <% }else{ %>
+        <div class="article-share-icons">
+          <a href="https://twitter.com/intent/tweet?text=<%- titleEnc %>&url=<%- urlEnc %>" class="article-share-icon-twitter" target="_blank" title="Twitter"></a>
+          <a href="http://b.hatena.ne.jp/my/add.confirm?url=<%- urlEnc %>" class="article-share-icon-hatena" target="_blank" title="はてなブックマーク"></a>
+          <a href="https://www.facebook.com/sharer.php?u=<%- urlEnc %>" class="article-share-icon-facebook" target="_blank" title="Facebook"></a>
+          <a href="https://plus.google.com/share?url=<%- urlEnc %>" class="article-share-icon-google" target="_blank" title="Google+"></a>
+        </div>
+      <% } %>
       <% if (post.comments && config.disqus_shortname){ %>
         <a href="<%- post.permalink %>#disqus_thread" class="article-comment-link"><%= __('comment') %></a>
       <% } %>
