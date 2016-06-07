@@ -11,6 +11,7 @@ fancybox: true
 # Sidebar
 sidebar: right
 widgets:
+- introduction
 - tag
 - recent_posts
 
@@ -26,7 +27,7 @@ show_count: false
 
 # Miscellaneous
 google_analytics:
-favicon:
+favicon: /css/images/favicon.png
 twitter: gabalist
 google_plus:
 fb_admins:
@@ -34,3 +35,5 @@ fb_app_id:
 
 search: false
 github: kazsw
+
+profile: 情報工学科に入学した順ちゃんです。記事についてのツッコミとかはTwitterまで。

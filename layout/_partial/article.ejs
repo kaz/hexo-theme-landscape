@@ -23,6 +23,7 @@
       <% } %>
     </div>
     <footer class="article-footer">
+      <%- partial('post/tag') %>
       <%
          var titleEnc = encodeURIComponent(post.title + " | " + config.title);
          var urlEnc = encodeURIComponent(post.permalink);
@@ -31,6 +32,7 @@
         <a data-title-enc="<%- titleEnc %>" data-url-enc="<%- urlEnc %>" data-url="<%- post.permalink %>" data-id="<%= post._id %>" class="article-share-link"><%= __('share') %></a>
       <% }else{ %>
         <div class="article-share-icons">
+          <div class="article-share-text"><span><%= __('share') %></span></div>
           <a href="https://twitter.com/intent/tweet?text=<%- titleEnc %>&url=<%- urlEnc %>" class="article-share-icon-twitter" target="_blank" title="Twitter"></a>
           <a href="http://b.hatena.ne.jp/my/add.confirm?url=<%- urlEnc %>" class="article-share-icon-hatena" target="_blank" title="はてなブックマーク"></a>
           <a href="https://www.facebook.com/sharer.php?u=<%- urlEnc %>" class="article-share-icon-facebook" target="_blank" title="Facebook"></a>
@@ -40,7 +42,6 @@
       <% if (post.comments && config.disqus_shortname){ %>
         <a href="<%- post.permalink %>#disqus_thread" class="article-comment-link"><%= __('comment') %></a>
       <% } %>
-      <%- partial('post/tag') %>
     </footer>
   </div>
   <% if (!index){ %>

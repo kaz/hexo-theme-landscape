@@ -138,6 +138,7 @@
 
 .article-footer
   clearfix()
+  position: relative
   font-size: 0.85em
   line-height: line-height
   border-top: 1px solid color-border
@@ -254,10 +255,6 @@
   clearfix()
   background: color-background
 
-.article-share-icons
-  display: inline-flex
-  float: right
-
 $article-share-link
   width: 50px
   height: 36px
@@ -273,13 +270,6 @@ $article-share-link
     text-align: center
   &:hover
     color: #fff
-
-$article-share-icon
-  height: 24px
-  margin-top: -4px
-  float: none
-  &:hover
-    background: transparent !important
 
 .article-share-twitter
   @extend $article-share-link
@@ -316,6 +306,22 @@ $article-share-icon
     background: color-google
     text-shadow: 0 1px darken(color-google, 20%)
 
+.article-share-text
+  color: #999
+  display: flex
+  flex-direction: column
+  justify-content: center
+
+.article-share-icons
+  display: inline-flex
+  position: absolute
+  right: 0
+  top: 10px
+
+$article-share-icon
+  &:hover
+    background: transparent
+
 .article-share-icon-twitter
   @extend .article-share-twitter, $article-share-icon
   &:hover:before
@@ -323,7 +329,7 @@ $article-share-icon
 
 .article-share-icon-hatena
   @extend .article-share-hatena, $article-share-icon
-  margin-top: -2px
+  margin-top: 3px
   &:hover:before
     color: color-hatena
 
