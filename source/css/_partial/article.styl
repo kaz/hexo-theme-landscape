@@ -78,10 +78,9 @@
     border-bottom: 1px solid color-border
     padding: 10px 0
   blockquote
-    font-family: font-serif
-    font-size: 1.4em
-    margin: line-height 20px
-    text-align: center
+    color: color-grey
+    border-left: 5px solid color-border
+    padding-left: 10px
     footer
       font-size: font-size
       margin: line-height 0
@@ -194,8 +193,9 @@
   margin-top: block-margin
   text-align: center
   display: block
-  &:hover
-    color: color-default
+  &:hover,  &:hover .article-nav-caption
+    color: color-link
+    text-shadow: 0 1px lighten(color-link, 85%)
   @media mq-normal
     width: 50%
     margin-top: 0
@@ -215,7 +215,7 @@
 .article-nav-caption
   text-transform: uppercase
   letter-spacing: 2px
-  color: color-border
+  color: color-grey
   line-height: 1em
   font-weight: bold
   #article-nav-newer &
@@ -308,6 +308,7 @@ $article-share-link
 
 .article-share-text
   color: #999
+  margin-right: 5px
   display: flex
   flex-direction: column
   justify-content: center
@@ -319,6 +320,7 @@ $article-share-link
   top: 10px
 
 $article-share-icon
+  width: 40px
   &:hover
     background: transparent
 

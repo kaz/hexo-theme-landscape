@@ -12,6 +12,7 @@ fancybox: true
 sidebar: right
 widgets:
 - introduction
+- category
 - tag
 - recent_posts
 
