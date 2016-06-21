@@ -6,7 +6,7 @@
   <div class="article-inner">
     <%- partial('post/gallery') %>
     <% if (post.link || post.title){ %>
-      <header class="article-header">
+      <header class="article-header<%- index ? "" : "-single" %>">
         <%- partial('post/title', {class_name: 'article-title'}) %>
       </header>
     <% } %>
@@ -27,7 +27,7 @@
       <%
          var titleEnc = encodeURIComponent(post.title + " | " + config.title);
          var urlEnc = encodeURIComponent(post.permalink);
-         if (index){
+         if (index) {
       %>
         <a data-title-enc="<%- titleEnc %>" data-url-enc="<%- urlEnc %>" data-url="<%- post.permalink %>" data-id="<%= post._id %>" class="article-share-link"><%= __('share') %></a>
       <% }else{ %>
