@@ -168,15 +168,6 @@
     font-family: font-icon
     padding-right: 8px
 
-.article-share-link
-  cursor: pointer
-  float: right
-  margin-left: 20px
-  &:before
-    content: "\f064"
-    font-family: font-icon
-    padding-right: 6px
-
 #article-nav
   clearfix()
   position: relative
@@ -229,125 +220,6 @@
   font-size: 0.85em
   line-height: line-height
   margin-top: 0.5em
-
-.article-share-box
-  position: absolute
-  display: none
-  background: #fff
-  box-shadow: 1px 2px 10px rgba(0, 0, 0, 0.2)
-  border-radius: 3px
-  margin-left: -145px
-  overflow: hidden
-  z-index: 1
-  &.on
-    display: block
-
-.article-share-input
-  width: 100%
-  background: none
-  box-sizing: border-box
-  font: 14px font-sans
-  padding: 0 15px
-  color: color-default
-  outline: none
-  border: 1px solid color-border
-  border-radius: 3px 3px 0 0
-  height: 36px
-  line-height: 36px
-
-.article-share-links
-  clearfix()
-  background: color-background
-
-$article-share-link
-  width: 50px
-  height: 36px
-  display: block
-  float: left
-  position: relative
-  color: #999
-  text-shadow: 0 1px #fff
-  &:before
-    font-size: 20px
-    font-family: font-icon
-    absolute-center(@font-size)
-    text-align: center
-  &:hover
-    color: #fff
-
-.article-share-twitter
-  @extend $article-share-link
-  &:before
-    content: "\f099"
-  &:hover
-    background: color-twitter
-    text-shadow: 0 1px darken(color-twitter, 20%)
-
-.article-share-hatena
-  @extend $article-share-link
-  &:before
-    margin-top: -13px
-    content: "B!"
-    font-family: Verdana
-    font-weight: bold
-  &:hover
-    background: color-hatena
-    text-shadow: 0 1px darken(color-hatena, 20%)
-
-.article-share-facebook
-  @extend $article-share-link
-  &:before
-    content: "\f09a"
-  &:hover
-    background: color-facebook
-    text-shadow: 0 1px darken(color-facebook, 20%)
-
-.article-share-google
-  @extend $article-share-link
-  &:before
-    content: "\f0d5"
-  &:hover
-    background: color-google
-    text-shadow: 0 1px darken(color-google, 20%)
-
-.article-share-text
-  color: #999
-  margin-right: 5px
-  display: flex
-  flex-direction: column
-  justify-content: center
-
-.article-share-icons
-  display: inline-flex
-  position: absolute
-  right: 0
-  top: 10px
-
-$article-share-icon
-  width: 40px
-  &:hover
-    background: transparent
-
-.article-share-icon-twitter
-  @extend .article-share-twitter, $article-share-icon
-  &:hover:before
-    color: color-twitter
-
-.article-share-icon-hatena
-  @extend .article-share-hatena, $article-share-icon
-  margin-top: 3px
-  &:hover:before
-    color: color-hatena
-
-.article-share-icon-facebook
-  @extend .article-share-facebook, $article-share-icon
-  &:hover:before
-    color: color-facebook
-
-.article-share-icon-google
-  @extend .article-share-google, $article-share-icon
-  &:hover:before
-    color: color-google
 
 .article-gallery
   background: #000
@@ -402,3 +274,12 @@ $article-gallery-ctrl
   &:before
     content: "\f054"
     right: 15px*/
+
+.article-share
+  padding: 10px 0
+  
+  .fb_iframe_widget
+    top: -3px
+  
+.katex
+  font-size: 1.5em !important

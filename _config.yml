@@ -13,7 +13,7 @@ sidebar: right
 widgets:
 - introduction
 - category
-- tag
+- tagcloud
 - recent_posts
 
 # display widgets at the bottom of index pages (pagination == 2)
