@@ -28,6 +28,7 @@ show_count: false
 
 # Miscellaneous
 google_analytics:
+gauges_analytics:
 favicon: /css/images/favicon.png
 twitter: N4RU5E
 google_plus:
